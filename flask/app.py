@@ -8,8 +8,7 @@ from sklearn.preprocessing import power_transform
 app = Flask(__name__)  
 with open('weather_pred_rf.pkl', 'rb') as file:
     model3 = pickle.load(file)  
-with open('weather_pred_xgb.pkl', 'rb') as file:
-    model4 = pickle.load(file)    
+  
 
 
 @app.route('/')
@@ -29,8 +28,8 @@ def predict():
     df=df.T
     print(df)
     prediction3 = model3.predict(df)
-    prediction=max(prediction, prediction3)
+    prediction= prediction3
     prediction=np.round(prediction, 2)
-    return render_template('/templates/result.html', prediction=prediction)
+    return render_template('result.html', prediction=prediction)
 if __name__ == '__main__':
     app.run()
