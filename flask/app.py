@@ -31,6 +31,6 @@ def predict():
     prediction3 = model3.predict(df)
     prediction=max(prediction, prediction3)
     prediction=np.round(prediction, 2)
-    return render_template('result.html', prediction=prediction)
+    return render_template('/templates/result.html', prediction=prediction)
 if __name__ == '__main__':
     app.run()
