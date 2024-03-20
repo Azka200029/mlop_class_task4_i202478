@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction - Result</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .result-container {
+            text-align: center;
+        }
+        .result-container h1,
+        .result-container p {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <h1>Weather Prediction - Result</h1>
+    <div class="result-container">
+        <h2>Prediction:</h2>
+        <p>{{ prediction }}</p>
+    </div>
+    <a href="{{ url_for('index') }}">Back to Home</a>
+</body>
+</html>

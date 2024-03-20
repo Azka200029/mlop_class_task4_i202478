@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Weather Prediction</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <h1>Weather Prediction</h1>
+    <form action="{{ url_for('predict') }}" method="post">
+        <label for="wind_deg">Wind Degree:</label>
+        <input type="number" step="0.01" name="wind_deg" required><br>
+
+        <label for="pressure">Pressure:</label>
+        <input type="number" step="0.01" name="pressure" required><br>
+
+        <label for="humidity">Humidity:</label>
+        <input type="number" step="0.01" name="humidity" required><br>
+
+        <label for="temp_max">Max Temperature:</label>
+        <input type="number" step="0.01" name="temp_max" required><br>
+
+        <label for="temp_min">Min Temperature:</label>
+        <input type="number" step="0.01" name="temp_min" required><br>
+
+        <input type="submit" value="Predict">
+    </form>
+</body>
+</html>
